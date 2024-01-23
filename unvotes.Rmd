@@ -1,6 +1,7 @@
 ---
 title: "UN Votes"
 date: "`r Sys.Date()`"
+author: Annie Hou
 output: 
   html_document: 
     toc: yes
@@ -39,7 +40,7 @@ We can easily change which countries are being plotted by changing which countri
 
 ```{r plot-yearly-yes-issue, fig.width=10, fig.height=6, message=FALSE}
 unvotes %>%
-  filter(country %in% c("UK & NI", "US", "Turkey")) %>%
+  filter(country %in% c("US", "China", "Turkey")) %>%
   mutate(year = year(date)) %>%
   group_by(country, year, issue) %>%
   summarize(percent_yes = mean(vote == "yes")) %>%
@@ -57,6 +58,10 @@ unvotes %>%
   )
 ```
 
+
+## New Section
+
+This is a new section.
 
 ## References {#references}
 
